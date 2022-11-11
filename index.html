@@ -16,23 +16,58 @@
 </head>
 
 <body>
-  <header>
-    <nav class="navbar navbar-dark navbar-expand bg-dark text-light no-select">
-      <a class="navbar-brand ms-3" href="#">
-        <img src="https://codeworks.blob.core.windows.net/public/assets/img/cw-mark.png" height="45" alt=""
-          loading="lazy">
-        <span class="ms-2">FruitSalad</span>
-      </a>
-    </nav>
-  </header>
-  <main>
-    <div class="container-fluid">
-      <div class="row">
-        <div class="col-12">
-          <div id="app"></div>
+  <header class="conatiner-fluid">
+    <section class="row p-2">
+      <div class="col-3 text-center">
+        <div class="card">
+          <h1>Fruit Salad</h1>
         </div>
       </div>
-    </div>
+    </section>
+
+
+  </header>
+  <main class="conatiner-fluid">
+    <section class='row justify-content-center p-3'>
+
+      <div class="col-6 bg-light border border-dark rounded p-3">
+        <!-- SECTION active player and current Score -->
+        <div class="d-flex">
+          <div id="active-player" class="d-flex">
+            <!-- <div>
+              <h4 class="me-5">Calvin</h4>
+            </div>
+            <div>
+              <h4>0</h4>
+            </div> -->
+          </div>
+          <div id="curr-score"></div>
+
+        </div>
+        <!-- SECTION player word input -->
+        <div id="game-area">
+          <div id="active-word"></div>
+          <div id="player-input">
+            <form onsubmit="app.playersController.checkAnswer()">
+              <input type="text" name="answer" id="answer" placeholder="answer" required>
+            </form>
+          </div>
+        </div>
+      </div>
+      <div class="col-4 card p-3">
+        <div id="name-score">
+          <!-- <h3>Calvin</h3>
+          <h3>Highscore: 10</h3> -->
+        </div>
+        <div id="input-name">
+          <form onsubmit="app.playersController.createPlayer()">
+            <input type="text" name="name" id="name" placeholder="name" required>
+            <button class="btn btn-success">Go!</button>
+          </form>
+        </div>
+        <!-- SECTION submit name form -->
+      </div>
+    </section>
   </main>
   <footer class="bg-dark text-light">
     <div class="text-center no-select">
